@@ -1,0 +1,11 @@
+<div id="<%= dom_id(turbo) %>">
+    <tr>
+        <td scope="row"><%= turbo.id %></td>
+        <td><%= turbo.name %></td>
+        <td><%= turbo.email %></td>
+        <td><%= turbo.addess %></td>
+        <td><%= link_to "Show", turbo_path(turbo) %></td>
+        <td><%= link_to "Edit", edit_turbo_path(turbo) %></td>
+        <td><%= link_to "Delete", turbo_path(turbo), method: :delete %></td>
+    </tr>
+</div>
