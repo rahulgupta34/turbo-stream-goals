@@ -1,4 +1,7 @@
 class TurboController < ApplicationController
+
+  before_action :find_turbo, only: [:destroy]
+
   def index
   end
 
@@ -16,7 +19,17 @@ class TurboController < ApplicationController
     end
   end
 
+  def destroy
+    @turbo.destroy
+    redirect_to turbo_crud_turbo_index_path
+  end
+
   private
+
+  def find_turbo
+    @turbo = TurboCrud.find(params[:id])
+  end
+
   def turbo_params
     params.require(:turbo_crud).permit(:name,:email,:addess)
   end

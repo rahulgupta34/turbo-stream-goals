@@ -7,15 +7,26 @@
                 <th scope="col">Name</th>
                 <th scope="col">Email</th>
                 <th scope="col">Handle</th>
-                <th scope="col">Show</th>
                 <th scope="col">Edit</th>
                 <th scope="col">Delete</th>
             </tr>
         </thead>
         <tbody>
+        <% if @turbos.length > 0 %>
             <% @turbos.each do |turbo| %>
                 <%= render "turbo/table", turbo: turbo %>
             <% end %>
+        <% else %>
+            <tr>
+              <td col-span="7"><p class="text-center">No Record Found.</p></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+        <% end %>
         </tbody>
     </table>
 </div>
