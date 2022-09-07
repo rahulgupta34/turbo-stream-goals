@@ -11,7 +11,10 @@
   </head>
 
   <body>
-    <%= yield %>
+  <div class="container">
+    <%= render "navbar/menu" %>
+       <%= yield %>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" ></script>
   </body>
 </html>
